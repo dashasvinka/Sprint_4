@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import java.util.concurrent.TimeUnit;
 
 public class ConfigurationWebDriver {
-    public static WebDriver InitChromeDriver() {
+    public static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -16,7 +16,7 @@ public class ConfigurationWebDriver {
         //driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
-    public static WebDriver InitFirefoxDriver() {
+    public static WebDriver initFirefoxDriver() {
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("capability.policy.default.Window.frameElement", "allAccess");
         WebDriver driver = new FirefoxDriver();
@@ -25,11 +25,11 @@ public class ConfigurationWebDriver {
         return driver;
     }
 
-    public static WebDriver GetDriverByDriverType(DriverType driverType) {
+    public static WebDriver getDriverByDriverType(DriverType driverType) {
         if (driverType == DriverType.Firefox) {
-            return InitFirefoxDriver();
+            return initFirefoxDriver();
         } else {
-            return InitChromeDriver();
+            return initChromeDriver();
         }
     }
 }

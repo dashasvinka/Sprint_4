@@ -49,7 +49,7 @@ public class PerfomanceModule {
                 new Properties(System.getProperties());
         p.load(propFile);
         System.setProperties(p);
-        driver = ConfigurationWebDriver.GetDriverByDriverType(driverType);
+        driver = ConfigurationWebDriver.getDriverByDriverType(driverType);
     }
 
     @Parameterized.Parameters
